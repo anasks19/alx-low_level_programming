@@ -21,5 +21,7 @@ break;
 }
 count++;
 }
+if (s[count] == '\0')
+return (NULL);
 return (s + count);
 }
