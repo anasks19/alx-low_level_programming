@@ -17,10 +17,9 @@ while (s[count] != '\0')
 {
 if (s[count] == c)
 {
-return (s + count);
 break;
 }
 count++;
 }
-return (NULL);
+return (s + count);
 }
