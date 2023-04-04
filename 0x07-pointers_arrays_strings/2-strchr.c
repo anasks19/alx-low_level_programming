@@ -2,7 +2,7 @@
 #include <stddef.h>
 
 /**
- * _strchr - locate a character in a string
+ * *_strchr - locate a character in a string
  * @s: pointer that point to the string target
  * @c: character to locate
  *
@@ -11,17 +11,16 @@
 
 char *_strchr(char *s, char c)
 {
-while (*s != '\0')
+int count = 0;
+
+while (s[count] != '\0')
 {
-if (*s == c)
+if (s[count] == c)
 {
-return (s);
+return (s + count);
+break;
 }
-s++;
-}
-if (*s == c)
-{
-return (s);
+count++;
 }
 return (NULL);
 }
