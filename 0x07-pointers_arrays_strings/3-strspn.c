@@ -11,7 +11,7 @@
 unsigned int _strspn(char *s, char *accept)
 {
 int i, j = 0;
-int size;
+unsigned int size;
 
 while (s[i] != accept[j])
 {
