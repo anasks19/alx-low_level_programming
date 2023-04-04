@@ -21,8 +21,8 @@ break;
 }
 count++;
 }
-if (s[count] == '\0')
-return (NULL);
-else
+if (s[count] == c)
 return (s + count);
+else
+return (NULL);
 }
