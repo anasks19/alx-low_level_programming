@@ -23,5 +23,6 @@ count++;
 }
 if (s[count] == '\0')
 return (NULL);
+else
 return (s + count);
 }
