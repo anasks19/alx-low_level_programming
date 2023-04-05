@@ -7,7 +7,7 @@
  * Return: return 0 if n lower than 0.
  */
 
-int factorial (int n)
+int factorial(int n)
 {
 /* case base */
 if (n < 0)
@@ -16,7 +16,7 @@ return (-1);
 }
 else if (n == 0)
 {
-return (0);
+return (1);
 }
-return (n * factorial (n - 1));
+return (n * factorial(n - 1));
 }
