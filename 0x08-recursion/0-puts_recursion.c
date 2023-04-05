@@ -9,7 +9,7 @@
 
 void _puts_recursion(char *s)
 {
-/* code base */
+/* base case */
 if (*s == '\0')
 {
 _putchar('\n');
