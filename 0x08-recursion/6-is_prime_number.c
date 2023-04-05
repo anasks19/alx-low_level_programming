@@ -16,4 +16,5 @@ return (1);
 else if (n / 2 * n / 2 == n)
 return (0);
 }
+return (0);
 }
