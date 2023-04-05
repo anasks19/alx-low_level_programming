@@ -16,6 +16,4 @@ return (1);
 else if (n / 2 * n / 2 == n)
 return (0);
 }
-else
-return (0);
 }
