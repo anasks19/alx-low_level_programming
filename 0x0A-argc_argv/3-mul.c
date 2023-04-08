@@ -6,7 +6,7 @@
  * @argc: argument count
  * @argv: argument vector
  *
- * Return: Always zero (Success),
+ * Return: Always zero (Success).
  */
 
 int main(int argc, char *argv[])
@@ -22,7 +22,7 @@ mul *= atoi(argv[count]);
 }
 printf("%d\n", mul);
 }
-else if (argc == 1)
+else
 {
 printf("Error\n");
 return (1);
