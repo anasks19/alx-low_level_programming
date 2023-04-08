@@ -6,7 +6,7 @@
  * @argc: argument count
  * @argv: argument vector
  *
- * Return: Multiplication if argc > 1, otherwise -1 (Error),
+ * Return: Always zero (Success),
  */
 
 int main(int argc, char *argv[])
@@ -14,18 +14,18 @@ int main(int argc, char *argv[])
 int count;
 int mul = 1;
 
-for (count = 1; count < argc; count++)
-{
 if (argc > 1)
+{
+for (count = 1; count < argc; count++)
 {
 mul *= atoi(argv[count]);
 }
-else
+printf("%d\n", mul);
+}
+else if (argc == 1)
 {
 printf("Error\n");
 return (1);
 }
-}
-printf("%d\n", mul);
 return (0);
 }
