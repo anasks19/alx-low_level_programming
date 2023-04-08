@@ -23,6 +23,7 @@ if ((*argv[count] >= 33 && *argv[count] <= 47) || (*argv[count] >= 97 &&
 {
 printf("Error\n");
 return (1);
+break;
 }
 sum += atoi(argv[count]);
 count++;
