@@ -16,7 +16,7 @@ int count = 1;
 int sum = 0;
 int i;
 
-if (argc > 2)
+if (argc >= 2)
 {
 while (count < argc)
 {
@@ -32,7 +32,7 @@ count++;
 }
 printf("%d\n", sum);
 }
-else if (argc == 1 || argc == 2)
+else if (argc == 1)
 {
 printf("0\n");
 }
