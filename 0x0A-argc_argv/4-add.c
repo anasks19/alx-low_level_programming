@@ -32,7 +32,7 @@ count++;
 }
 printf("%d\n", sum);
 }
-else
+else if (argc == 1)
 {
 printf("0\n");
 }
