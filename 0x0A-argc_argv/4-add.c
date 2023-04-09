@@ -20,7 +20,7 @@ if (argc > 1)
 {
 while (count < argc)
 {
-if (atoi(argv[count]) < 0 || !isdigit(argv[count][i]))
+if (atoi(argv[count]) < 0 || (!isdigit(argv[count][i]) && argv[count][i] != 0))
 {
 printf("Error\n");
 i++;
