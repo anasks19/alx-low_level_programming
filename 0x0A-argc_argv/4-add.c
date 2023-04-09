@@ -9,14 +9,13 @@
  *
  * Return: Always 0 (Success).
  */
-
 int main(int argc, char *argv[])
 {
 int count = 1;
 int sum = 0;
-int i;
+int i = 0;
 
-if (argc > 2)
+if (argc > 1)
 {
 while (count < argc)
 {
@@ -26,7 +25,15 @@ if (atoi(argv[count]) < 0 || !isdigit(argv[count][i]))
 printf("Error\n");
 return (1);
 }
+while (argv[count][i] != '\0')
+{
+if (!isdigit(argv[count][i]))
+{
+printf("Error\n");
+return (1);
+}
 i++;
+}
 sum += atoi(argv[count]);
 count++;
 }
