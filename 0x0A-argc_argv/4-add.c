@@ -18,21 +18,31 @@ int i = 0;
 
 if (argc > 1)
 {
-while (count < argc && argv[count][i] != 0)
+while (count < argc)
 {
+i = 0;
 if (atoi(argv[count]) < 0 || !isdigit(argv[count][i]))
 {
 printf("Error\n");
-i++;
 return (1);
 }
-else
+while (argv[count][i] != '\0')
+{
+if (!isdigit(argv[count][i]))
+{
+printf("Error\n");
+return (1);
+}
+i++;
+}
 sum += atoi(argv[count]);
 count++;
 }
 printf("%d\n", sum);
 }
 else
+{
 printf("0\n");
+}
 return (0);
 }
