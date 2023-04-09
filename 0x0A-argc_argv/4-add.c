@@ -16,7 +16,7 @@ int count = 1;
 int sum = 0;
 int i;
 
-if (argc >= 2)
+if (argc > 2)
 {
 while (count < argc)
 {
