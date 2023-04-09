@@ -18,9 +18,9 @@ int i = 0;
 
 if (argc > 1)
 {
-while (count < argc)
+while (count < argc && argv[count][i] != 0)
 {
-if (atoi(argv[count]) < 0 || (!isdigit(argv[count][i]) && argv[count][i] != 0))
+if (atoi(argv[count]) < 0 || !isdigit(argv[count][i]))
 {
 printf("Error\n");
 i++;
