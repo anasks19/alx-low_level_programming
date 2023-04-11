@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * create_array - create an array of chars, and initializes it 
+ * create_array - create an array of chars, and initializes it
  * with a specific char
  * @size: size of the array
  * @c: character to initializes
@@ -23,7 +23,7 @@ str[i] = c;
 i++;
 }
 
-if (size == 0 || str == NULL)
+if (size == 0 || !str)
 {
 return (NULL);
 }
