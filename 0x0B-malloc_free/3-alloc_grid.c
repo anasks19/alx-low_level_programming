@@ -2,13 +2,12 @@
 #include <stdlib.h>
 
 /**
- * alloc_grid - return a pointer to a 2 dimensional array of intgers
+ * alloc_grid - return a pointer to a 2 dimensional array of integers
  * @width: columns
  * @height: rows
  *
- * Return: NULL.
+ * Return: pointer to 2D array or NULL.
  */
-
 int **alloc_grid(int width, int height)
 {
 int a = 0;
@@ -18,13 +17,13 @@ int **matrix;
 if (width <= 0 || height <= 0)
 return (NULL);
 
-matrix = (int **)malloc(sizeof(int *) * height);
+matrix = (int **) malloc(sizeof(int *) * height);
 if (matrix == NULL)
 return (NULL);
 
 while (a < height)
 {
-matrix[a] = (int *)malloc(sizeof(int) * width);
+matrix[a] = (int *) malloc(sizeof(int) * width);
 if (matrix[a] == NULL)
 {
 while (b < a)
@@ -36,9 +35,8 @@ free(matrix);
 return (NULL);
 }
 for (b = 0; b < width; b++)
-grid[a][b] = 0;
+matrix[a][b] = 0;
 a++;
 }
-
 return (matrix);
 }
