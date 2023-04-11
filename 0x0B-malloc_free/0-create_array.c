@@ -23,10 +23,13 @@ str[i] = c;
 i++;
 }
 
-if (size == 0 || !str)
+if (size == 0)
 {
 return (NULL);
 }
-else
+
+if (!str)
+return (NULL);
+
 return (str);
 }
