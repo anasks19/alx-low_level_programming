@@ -17,26 +17,27 @@ int **matrix;
 if (width <= 0 || height <= 0)
 return (NULL);
 
-matrix = (int **) malloc(sizeof(int *) * height);
+matrix = malloc(sizeof(int *) * height);
 if (matrix == NULL)
 return (NULL);
 
-while (a < height)
+for (a = 0; a < height; a++)
 {
-matrix[a] = (int *) malloc(sizeof(int) * width);
+matrix[a] = malloc(sizeof(int) * width);
 if (matrix[a] == NULL)
 {
-while (b < a)
-{
-free(matrix[b]);
-b++;
-}
+while (--a >= 0)
+free(matrix[a]);
 free(matrix);
 return (NULL);
 }
+}
+for (a = 0; a < height; a++)
+{
 for (b = 0; b < width; b++)
+{
 matrix[a][b] = 0;
-a++;
+}
 }
 return (matrix);
 }
