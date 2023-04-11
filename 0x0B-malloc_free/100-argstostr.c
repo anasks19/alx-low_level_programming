@@ -11,43 +11,32 @@
 
 char *argstostr(int ac, char **av)
 {
-int total_length = 0,
-int pos = 0,
-int len;
-char *result;
+int i, j, pos = 0, len = 0;
+char *str;
 
 if (ac == 0 || av == NULL)
 return (NULL);
 
-for (int i = 0; i < ac; i++)
-{
-len = strlen(av[i]);
-while (*av[i] == ' ' || *av[i] == '\t')
-{
-av[i]++;
-len--;
-}
-total_length += len + 1;
-}
+/* calculate total length of arguments */
+for (i = 0; i < ac; i++)
+len += strlen(av[i]);
 
-result = malloc((total_length)*sizeof(char));
-if (result == NULL)
+/* allocate memory for concatenated string and newline characters */
+str = malloc(sizeof(char) * (len + ac + 1));
+if (str == NULL)
 return (NULL);
 
-for (int i = 0; i < ac; i++)
+/* concatenate arguments */
+for (i = 0; i < ac; i++)
 {
-len = strlen(av[i]);
-while (*av[i] == ' ' || *av[i] == '\t')
+for (j = 0; av[i][j]; j++)
 {
-av[i]++;
-len--;
+str[pos] = av[i][j];
+pos++;
 }
-memcpy(result + pos, av[i], len);
-pos += len;
-result[pos++] = '\n';
+str[pos] = '\n';
+pos++;
 }
-
-result[pos] = '\0';
-
-return (result);
+str[pos] = '\0';
+return (str);
 }
