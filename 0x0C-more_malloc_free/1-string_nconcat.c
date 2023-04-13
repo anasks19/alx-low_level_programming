@@ -30,8 +30,8 @@ char *concat = malloc(len1 + n + 1);
 if (concat == NULL)
 return (NULL);
 
-memcpy(concat, s1, len1);
-memcpy(concat + len1, s2, n);
+strncpy(concat, s1, len1);
+strncat(concat + len1, s2, n);
 concat[len1 + n] = '\0';
 
 return (concat);
