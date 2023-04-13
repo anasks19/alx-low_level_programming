@@ -33,8 +33,8 @@ concat = malloc(len1 + n + 1);
 if (concat == NULL)
 return (NULL);
 
-strncpy(concat, s1, len1);
-strncat(concat , s2, n);
+memcpy(concat, s1, len1);
+memcpy(concat + len1, s2, n);
 concat[len1 + n] = '\0';
 
 return (concat);
