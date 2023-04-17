@@ -3,4 +3,4 @@
 
 #define ABS(x) (-x)
 
-#endif FUNCTION_LIKE_MACRO_H
+#endif /* FUNCTION_LIKE_MACRO_H */
