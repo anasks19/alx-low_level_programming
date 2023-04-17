@@ -29,6 +29,4 @@ void print_dog(struct dog *d);
  */
 typedef struct dog dog_t;
 
-dog_t *dog_two(char *name, floar age, char *owner);
-
 #endif /* DOG_H */
