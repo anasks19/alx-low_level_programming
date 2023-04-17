@@ -6,5 +6,6 @@
 return (-x);
 #else
 return (x);
+#endif
 
 #endif /* FUNCTION_LIKE_MACRO_H */
