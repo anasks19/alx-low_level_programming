@@ -17,10 +17,9 @@ char *owner;
 };
 
 /**
- * __dog__ - typedef of struct dog
+ * dog__ - typedef of struct dog
  */
-
-typedef struct dog __dog__;
+typedef struct dog dog__;
 
 void init_dog(struct dog *d, char *name, float age, char *owner);
 
