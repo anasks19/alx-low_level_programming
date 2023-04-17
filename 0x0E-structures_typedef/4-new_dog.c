@@ -1,57 +1,81 @@
 #include <stdlib.h>
 #include "dog.h"
-#include <stdlib.h>
+
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
 
 /**
  * new_dog - creates a new dog
- * @name: name of the dog
- * @age: age of the dog
- * @owner: owner of the dog
+ * @name: the name of the dog
+ * @age: the age of the dog
+ * @owner: the owner of the dog
  *
- * Return: pointer to the new dog
+ * Return: pointer to new dog, or NULL if function fails
  */
-
 dog_t *new_dog(char *name, float age, char *owner)
 {
-dog_t *dog;
+dog_t *new_dog;
 char *name_copy, *owner_copy;
-int name_len = 0, owner_len = 0;
 
-dog = malloc(sizeof(dog_t));
-if (dog == NULL)
+new_dog = malloc(sizeof(dog_t));
+if (new_dog == NULL)
 return (NULL);
 
-/* compute length of name and owner */
-while (name[name_len] != '\0')
-name_len++;
-while (owner[owner_len] != '\0')
-owner_len++;
-
-/* allocate memory for name and owner copies */
-name_copy = malloc(sizeof(char) * (name_len + 1));
+name_copy = malloc(sizeof(char) * (_strlen(name) + 1));
 if (name_copy == NULL)
 {
-free(dog);
+free(new_dog);
 return (NULL);
 }
-owner_copy = malloc(sizeof(char) * (owner_len + 1));
+
+owner_copy = malloc(sizeof(char) * (_strlen(owner) + 1));
 if (owner_copy == NULL)
 {
+free(new_dog);
 free(name_copy);
-free(dog);
 return (NULL);
 }
 
-/* copy name and owner to their respective copies */
-for (int i = 0; i <= name_len; i++)
-name_copy[i] = name[i];
-for (int i = 0; i <= owner_len; i++)
-owner_copy[i] = owner[i];
+_strcpy(name_copy, name);
+_strcpy(owner_copy, owner);
 
-/* assign values to dog elements */
-dog->name = name_copy;
-dog->age = age;
-dog->owner = owner_copy;
+new_dog->name = name_copy;
+new_dog->age = age;
+new_dog->owner = owner_copy;
 
-return (dog);
+return (new_dog);
 }
+
+/**
+ * _strlen - returns the length of a string
+ * @s: the string to measure
+ *
+ * Return: the length of the string
+ */
+int _strlen(char *s)
+{
+int i;
+
+for (i = 0; s[i]; i++)
+;
+return (i);
+}
+
+/**
+ * _strcpy - copies a string to a buffer
+ * @dest: the buffer to copy to
+ * @src: the string to copy
+ *
+ * Return: pointer to dest
+ */
+char *_strcpy(char *dest, char *src)
+{
+int i;
+
+for (i = 0; src[i]; i++)
+dest[i] = src[i];
+dest[i] = '\0';
+
+return (dest);
+}
+
